@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=H:\all folders\Django Project_2\Env_File
+set VIRTUAL_ENV=H:\all folders\Movie Collection Django\Env_File
 
 if not defined PROMPT set PROMPT=$P$G
 

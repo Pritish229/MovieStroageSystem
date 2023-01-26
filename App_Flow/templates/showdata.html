@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-bordered border-info" style="border-color:blue;">
+    <th class = "border-info">Movie Name</th>
+    <th class = "border-info">Movie Id</th>
+    <th class = "border-info">Movie Rating</th>
+    <th class = "border-info">Movie Url</th>
+    <th class = "border-info">Movie Image</th>
+    <th class = "border-info">Edit Data</th>
+    <th class = "border-info">Delete Data</th>
+    {% for item in newdata %}
+  <tr>
+      <td class = "border-info">{{item.movie_name}}</td>
+      <td class = "border-info">{{item.movie_id}}</td>
+      <td class = "border-info">{{item.movie_rating}}</td>
+      <td class = "border-info">{{item.movie_description}}</td>
+      <td class = "border-info">
+            <img src="{{item.movie_image.url}}" class="rounded" height="70px" alt="">
+      </td>
+      <td class = "border-info">
+          <a href="{% url 'editpageinfo' item.id %}" class="text-light">
+          <button type="button" class="btn btn-primary my-2">
+             Edit
+          </button>
+          </a>
+      </td>
+      <td class = "border-info">
+        <a href="{% url 'deleteinfo' item.id %}"  class="text-light">
+        <button type="button" class="btn btn-danger my-2">
+             Delete
+        </button>
+        </a>
+          
+      </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<a href="/movie" class="text-primary">&lt; Back</a>
+{% endblock %}

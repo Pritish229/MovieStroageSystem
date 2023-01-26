@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} 
+
+ 
+<div class="container shadow rounded py-4 px-4">
+  <form action ="moviesum" method = 'POST' enctype="multipart/form-data">
+         {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Movie / Web series Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name = 'Fname'>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Movie Id</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name = 'Fid'>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">IMDb Rating out of 10</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name = 'Fprice'>
+  </div>
+
+    <div>
+  <label for="formFileLg" class="form-label">Upload the image</label>
+  <input class=" form-control-sm" id="formFileLg" type="file" name='Fimage'>
+    </div>
+    <br>
+  <div class="form-floating">
+      <label for="floatingTextarea2">Movie URL</label>
+  <textarea class="form-control" placeholder="Past Your URL here" id="floatingTextarea2" style="height: 100px" name = 'Fdescription'></textarea>
+    </div>
+    <p></p>
+
+  <button type="submit" class="btn btn-primary mx-2" name = 'submit'>Submit</button>
+ <a href="/"> <button type="button" class="btn btn-outline-success">Show Data</button></a>
+</form>
+<br>
+</div>
+ 
+
+
+{% endblock %}
